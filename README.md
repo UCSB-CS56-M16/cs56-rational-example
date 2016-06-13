@@ -6,20 +6,7 @@ These examples are intended as support for a course in which there are also read
 
 Having said that, if you follow the code examples in order, and look up the concepts that are new to you at each step, that will probably go a long way towards learning some important basic concepts of Java programming.
 
-# Basic ideas of the Rational class.
-
-From Wikipedia (retrieved 6/13/2016): 
-
-> In mathematics, a rational number is any number that can be expressed as the quotient or fraction p/q of two integers,
-> a numerator p and a non-zero denominator q.[1] Since q may be equal to 1, every integer is a rational number. 
-> The set of all rational numbers is usually denoted by a boldface Q 
-> (or blackboard bold {\displaystyle \mathbb {Q} } \mathbb {Q} , Unicode ℚ);[2] 
-> it was thus denoted in 1895 by Peano after quoziente, Italian for "quotient".
-
-The Rational class provides an abstraction for a rational number. 
-* A Rational number is a number that can be represented by 
-
-# Guide:
+# Guide to this set of Examples
 
 * Top level directory contains 
     * this `README.md` file
@@ -28,6 +15,35 @@ The Rational class provides an abstraction for a rational number.
     
 * To follow these examples, consult each README.md in each subdirectory (ex01/README.md) etc. in order, for further information.
 
+# Basic description of the Rational class
+
+The Rational class provides an abstraction for a rational number, that is one that has an integer numerator, and a non-zero integer
+denominator.  For a more formal definition, consult the [Wikipedia article on Rational Numbers](https://en.wikipedia.org/wiki/Rational_number).
+
+This tutorial will not try to motivate *why* we need a class for rational numbers.   We will assume that there is some need to represent these in a program.   We'll assume that once some Java code has gotten input from somewhere for the numerator and denominator of two rational numbers, it needs to:
+* Constructor objects that represent these two rational numbers
+* Compute new rational numbers representing their sum, difference, and product.   
+* Output those rational numbers in some way to the user.
+
+We'll assume that instances of the class are immutable, i.e. we provide a way to construct objects, and getters for numerator and denominator, but no setters for numerator and denominator.
+
+We'll assume that when instances of Rational are constructed, that if there are any common factors between the numerator and denominator, they are factored out.  That is, the rational is represented internally in reduced form, and the getters for numerator and denominator reflect this.  Example:
+* Suppose we create a Rational with `Rational r=new Rational(2,4);` 
+* Then, `r.toString()` will return `"1/2"`
+* The getters for numerator and denominator will return `1` and `2`, respectively.
+
+We'll assume the following rules for negative numbers: 
+* The negative sign is attached to the numerator, and the denominator is always positive.  
+* Thus getNumerator() can return either a positive, zero, or negative integer, while getDenominator() always returns a strictly positive integer.
+
+We'll also assume that, as a straightforward way of "outputting" rational numbers, a toString() method suffices, with these formatting rules:
+* The representation is simply `numerator/demoninator`, e.g. `3/4`, `-6/7`.   
+* We'll also assume that when the denominator is 1, that it should be omitted, e.g. `2`, and `0`, not `2/1` and `0/1'
+* We'll assume that the negative sign, when present, always appears in the numerator
+
+We'll leave the "quotient" of two rational numbers as a very straightforward programming exercise.
+
+In the first few examples, not all of these rules may yet be in place.  We'll add those incrementally.  Also, as we proceed through the examples, we may make additional assumptions, set additional goals, and/or place additional restrictions.  Those will be noted in the README.md for each example.
 
 # Java Language Concepts 
 
@@ -46,11 +62,12 @@ This is a work in progress; not all may be covered yet.  Will update this list w
 1. creating an arraylist of rationals
 1. sorting an arraylist of rationals
 
-Tools
+Java Language Toolset Skills
 
 1. Compiling by hand
+1. cyber-dojo.org  (for divisible, gcd)
 1. Packages
 1. Ant
+1. Javadoc
 1. Maven
-1. cyber-dojo.org  (for divisible, gcd)
 
