@@ -1,4 +1,4 @@
-public class Main {
+public class Main { // implicit: public class Main extends object
     
     public static void main (String [] args) {
 
@@ -22,6 +22,9 @@ public class Main {
 
 	Rational r1 = new Rational();
 	Rational r2 = new Rational(num, denom);
+
+	System.out.println("r1 = " + r1); // implicit: r1.toString()
+	System.out.println("r2 = " + r2); // implicit: r2.toString()
 	
     } // main
 
