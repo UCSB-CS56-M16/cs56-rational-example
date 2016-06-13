@@ -49,11 +49,12 @@ In the first few examples, not all of these rules may yet be in place.  We'll ad
 
 This is a work in progress; not all may be covered yet.  Will update this list with reference to the first example where each concept is introduced as work on this repo progresses.
 
-1. private data members
-1. public constructors, getters
-1. immutable objects
-1. JUnit testing
-1. toString method
+1. private data members  (ex01)
+1. public constructors (ex01)
+1. toString method (ex02)
+1. public getters (ex03)
+1. immutable objects (throughout, but discussed in ex03)
+1. JUnit testing (ex03)
 1. static methods (class level)
 1. equals vs. == 
 1. proper way to override equals and hashcode
@@ -64,10 +65,12 @@ This is a work in progress; not all may be covered yet.  Will update this list w
 
 Java Language Toolset Skills
 
-1. Compiling by hand
+1. Compiling/Running by hand with `javac` and `java` (ex01)
+1. Ant (ex02)
+1. Running from a jar file (ex02)
+1. Javadoc (ex02)
+1. JUnit jars (ex03)
 1. cyber-dojo.org  (for divisible, gcd)
 1. Packages
-1. Ant
-1. Javadoc
 1. Maven
 
