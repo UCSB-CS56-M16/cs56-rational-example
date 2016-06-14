@@ -63,10 +63,12 @@ A few things to note:
 
 # Every class (directly or indirectly) `extends Object`
 
-When we write `public class Foo extends Bar {` it signifies that Bar is the parent class of Foo, i.e. the Foo inherits from Bar.
+When we write `public class Foo extends Bar {` it signifies that Bar
+is the parent class of Foo, i.e. the Foo inherits from Bar.
 
-If we write just `public class Foo`, unlike in C++ where that would signify that Foo has no parent class,
-in Java, any time we write this, it is the same as writing `public class Foo extends java.lang.Object`.
+If we write just `public class Foo`, unlike in C++ where that would
+signify that Foo has no parent class, in Java, any time we write this,
+it is the same as writing `public class Foo extends java.lang.Object`.
 
 Notes:
 * Classes that start with `java.lang.` are part of the Java Language.
@@ -102,5 +104,6 @@ Instead, we get:
 r1 = Rational@2a139a55
 ```
 
-To fix this, we need to override the toString method.  We'll do this in example [ex02](../ex02)
+To fix this, we need to override the toString method.  We'll do this
+in example [ex02](../ex02)
 
