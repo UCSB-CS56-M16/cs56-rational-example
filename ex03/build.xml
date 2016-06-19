@@ -8,12 +8,21 @@
 
   <target name="clean">
     <delete>
-      <fileset dir="." includes="**/*.class"/>
+      <fileset dir="." includes="*.class"/>
     </delete>
   </target>
 
   <target name="run">
     <java classname="Rational" classpath="."/>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="build/rational.jar">
+      <fileset dir="." includes="*.class"/>
+      <manifest>
+	<attribute name="Main-Class" value="Rational"/>
+      </manifest>
+    </jar>
   </target>
   
 </project>

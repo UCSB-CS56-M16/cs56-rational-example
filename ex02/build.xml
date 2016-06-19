@@ -8,7 +8,7 @@
 
   <target name="clean">
     <delete>
-      <fileset dir="." includes="**/*.class"/>
+      <fileset dir="." includes="*.class"/>
     </delete>
   </target>
 

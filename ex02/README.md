@@ -184,7 +184,7 @@ and hence easy to follow and understand.
 
   <target name="clean">
     <delete>
-      <fileset dir="." includes="**/*.class"/>
+      <fileset dir="." includes="*.class"/>
     </delete>
   </target>
 
@@ -245,12 +245,15 @@ Total time: 0 seconds
 -bash-4.3$
 ```
 
-To run the other Main, since it takes command line parameters, it is better to run it interactively
-the "old fashioned way".   It is possible to pass command line parameters into a build.xml file
-to run a program with command line parameters, but it isn't straightforward.  It's easier to just
-run the program directly (outside of ant).  The same is true for interactive programs that
-read from stdin (`System.in` in java).      (As we'll see later, for GUIs, ant can be used; we just
-have to specify the `fork="true"` attribute in the `java` task. But we are getting ahead of ourselves.)
+To run the other Main, since it takes command line parameters, it is
+better to run it interactively the "old fashioned way".  It is
+possible to pass command line parameters into a build.xml file to run
+a program with command line parameters, but it isn't straightforward.
+It's easier to just run the program directly (outside of ant).  The
+same is true for interactive programs that read from stdin
+(`System.in` in java).  (As we'll see later, for GUIs, ant can be
+used; we just have to specify the `fork="true"` attribute in the
+`java` task. But we are getting ahead of ourselves.)
 
 ```
 -bash-4.3$ java Main
@@ -301,6 +304,6 @@ topics, or have questions while reviewing for the exam, be sure you ask (and not
 * other things you need to know
     * the use of `"."` to mean current directory
     * the meaning of `classpath`
-    * the use of `<fileset dir="." includes="**/*.class"/>`
-    * the meaning of `**/*.class` in the `fileset` syntax
+    * the use of `<fileset dir="." includes="*.class"/>`
+    * the meaning of `*.class` in the `fileset` syntax
   
