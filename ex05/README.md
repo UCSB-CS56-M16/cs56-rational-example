@@ -184,5 +184,6 @@ That's all we are going to do in ex05.
 
 In ex06, we'll look at:
 
+* Adding links to the Java Standard Libraries into our javadoc
 * The situation with negative rational numbers, and negative parameters to our constructor
 * Multiplying rational numbers
