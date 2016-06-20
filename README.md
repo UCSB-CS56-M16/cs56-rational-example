@@ -6,6 +6,8 @@ These examples are intended as support for a course in which there are also read
 
 Having said that, if you follow the code examples in order, and look up the concepts that are new to you at each step, that will probably go a long way towards learning some important basic concepts of Java programming.
 
+Link to javadocs: <http://ucsb-cs56-m16.github.io/cs56-rational-example>
+
 # Guide to this set of Examples
 
 * Top level directory contains 
