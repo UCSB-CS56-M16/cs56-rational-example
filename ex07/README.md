@@ -199,5 +199,58 @@ test:
 
 With that done, we'll turn our attention to negative numerator and denominator.
 
-# TODO: Negative num and denom
+# Negative num and denom
+
+So, the first thing we do is write some tests that we expect to fail:
+
+```java
+   @Test
+   public void test_rational_m10_m5() {
+     Rational r = new Rational(-10,-5);
+     assertEquals("2",r.toString());
+   }
+
+    @Test
+    public void test_rational_m5_6() {
+     Rational r = new Rational(-5,6);
+     assertEquals("-5/6",r.toString());
+    }
+
+    @Test
+    public void test_rational_7_m8() {
+      Rational r = new Rational(7,-8);
+      assertEquals("-7/8",r.toString());
+    }
+```
+
+We run, and whoa! the tests all pass!
+
+So, this leaves us in an interesting position.  It appears that the gcd() function may just be taking care of the problem that we
+anticipated, by factoring out -1, and miraculously, always leaving the negative number in the numerator.
+
+Or, we actually might just have gotten lucky with our choice of tests.
+
+For now, we'll leave this as an "unsolved mystery", i.e. do we still have a bug with negative numbers that our tests just haven't
+revealed to us?   Or can we actually demonstrate, perhaps with a proof, or some other argument, that our code is correct?
+
+Here's what we can say for sure: if we later discover a bug, the way to proceed is to *first* add a test that fails because of that bug,
+i.e.
+
+* FIRST, add a test with the specific values to the Rational constructor that cause us to get an unexpected result.
+* THEN, see that test fail.
+* THEN, fix the code so that the test passes.
+
+All the while, retaining all of the other tests we already wrote.
+
+# What's next in ex08?
+
+Next, we'll show how to write functions to multiply two rational numbers together.
+
+After that, we'll take on the task of writing a comparison function,
+with an eye towards being able to sort collections of rational
+numbers.  That will take us into the land of "common denominators",
+which is also something we'll need if we want to be able to add
+rational numbers.
+
+
 

@@ -102,4 +102,23 @@ public class RationalTest {
 	assertEquals(5, Rational.gcd(20,25));
     }
 
+    @Test
+    public void test_rational_m10_m5() {
+	Rational r = new Rational(-10,-5);
+	assertEquals("2",r.toString());
+    }
+
+    @Test
+    public void test_rational_m5_6() {
+	Rational r = new Rational(-5,6);
+	assertEquals("-5/6",r.toString());
+    }
+
+    @Test
+    public void test_rational_7_m8() {
+	Rational r = new Rational(7,-8);
+	assertEquals("-7/8",r.toString());
+    }
+
+    
 }
