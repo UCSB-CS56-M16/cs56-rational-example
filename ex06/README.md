@@ -146,6 +146,10 @@ Then, your changes should be on github at:
 *  <https://username.github.io/repo-name> if it is a personal repo
 *  <https://orgname.github.io/repo-name> if it is an organizational repo
 
+Note that if you are looking for the javadoc, you might have to add the exact directory plus the "index.html" to the repo name, otherwise you'll get a `404-Document not found`.   For example, in the case of this repo, the index to the javadoc for ex06 is under `/ex06/javadoc/index.html`, and the organization is `UCSB-CS56-M16` (at least as of this writing). So the URL is:
+
+* <https://UCSB-CS56-M16.github.io/cs56-rational-example/ex06/javadoc/index.html>
+
 
 # Looking ahead to ex07
 
