@@ -1,4 +1,4 @@
-# cs56-rational-example/ex03
+# cs56-rational-example/ex04
 
 In this example, we will add three new features to our build.xml file
 
