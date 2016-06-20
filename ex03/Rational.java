@@ -22,6 +22,7 @@ public class Rational {
     
     /** 
 	For testing getters.  
+	@param args unused
      */
 
     public static void main (String [] args) {
