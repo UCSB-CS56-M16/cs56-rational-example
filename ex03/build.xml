@@ -1,7 +1,7 @@
 <project>
 
   <path id="project.class.path"> 
-    <pathelement location="build"/>
+    <pathelement location="."/>
     <pathelement location="lib/junit-4.8.2.jar"/>
   </path>
 
@@ -32,6 +32,16 @@
     </jar>
   </target>
   
-
+  <target name="test" depends="compile" description="run JUnit tests">
+    <junit haltonerror="no" haltonfailure="no">
+      <classpath refid="project.class.path" />
+      <batchtest fork="yes">
+	<fileset dir=".">
+	  <include name="*Test.java"/>
+	</fileset>
+      </batchtest>
+      <formatter type="brief" usefile="false" />
+    </junit>
+  </target>
 
 </project>

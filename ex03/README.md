@@ -225,14 +225,47 @@ But how do we run the tests?  There's a special ant task for that.
 
 ## Add a test target to run the tests
 
+We'll add this target to our build.xml file.  Note that it depends on the `compile` target.
 
+```xml
+  <target name="test" depends="compile" description="run JUnit tests">
+    <junit haltonerror="no" haltonfailure="no">
+      <classpath refid="project.class.path" />
+      <batchtest fork="yes">
+	<fileset dir=".">
+	  <include name="*Test.java"/>
+	</fileset>
+      </batchtest>
+      <formatter type="brief" usefile="false" />
+    </junit>
+  </target>
+```
 
+To understand all of this, it may be helpful to refer to the reference for the JUnit Ant Task, here: <https://ant.apache.org/manual/Tasks/junit.html>
 
-TODO:
+For now, the important thing to know is that we run our tests by typing `ant test`:
 
-Carry over to ex04:
+```
+ex03 pconrad$ ant test
+Buildfile: /Users/pconrad/github/UCSB-CS56-M16/cs56-rational-example/ex03/build.xml
 
-TODO: refactoring the directories into src and build (no packages yet)
-TODO: fix the clean task
-TODO: javadoc
-TODO: immutable objects
+compile:
+
+test:
+    [junit] Testsuite: RationalTest
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec
+    [junit]
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+ex03 pconrad$ 
+```
+
+That's it for example ex03.
+
+In [ex04](../ex04/README.md), we'll:
+
+* clean up our directory structure, moving source files to `/src` and class files into `/build`
+* we'll adjust the `clean` target accordingly
+* we'll add a target to create javadoc
+* we'll discuss the idea of immutable objects
