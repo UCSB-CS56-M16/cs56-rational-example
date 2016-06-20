@@ -122,6 +122,31 @@ TODO...
 TODO...
 
 
+# Putting our javadoc online using github-pages
+
+If you are working in a github.com repo, it is easy to put your javadoc online using github-pages, a value added feature of github.com.
+
+It does involve using *branches*, a slightly more advanced feature of git, but only in the most basic way possible.
+
+Here, I'll just explain the workflow quickly, and not go into a lot of detail.     We might go into more detail in lecture about what
+is happening here.
+
+To publish online, do this series of commands:
+
+* Work in the master branch as usual
+* Use `ant javadoc` to generate the javadoc
+* Use the usual commands to push to master:
+    * That is, `git add ...`,  `git commit -m "message"`, `git push origin master` 
+* Use `git checkout gh-pages` to go to the `gh-pages` branch
+    * The *first time* only, use `git checkout -b gh-pages` to create the branch.  That's a one-time thing.
+* Use `git merge master` to bring in changes from the `master` branch into the `gh-pages` branch.
+* Use `git push origin gh-pages` to push your changes to the `gh-pages` branch.
+
+Then, your changes should be on github at:
+*  <https://username.github.io/repo-name> if it is a personal repo
+*  <https://orgname.github.io/repo-name> if it is an organizational repo
+
+
 # Looking ahead to ex07
 
 In ex07, we'll look at Exceptions in Java by exploring how they can be used to enforce some assumptions we've been making about parameters to functions:
