@@ -142,6 +142,94 @@ We'll do each of those next.
 
 TODO: Each of those items.
 
+## 1. Write some code that uses JUnit
+
+
+A simple test we can do is to see if our constructors and getters are working properly.
+We'll set up a few objects and then see if the getters return the expected values.
+
+We'll add a file called RationalTest.java to our project, with these contents:
+
+```Java
+// insert RationalTest.java here
+```
+
+Clever students may have noticed: one of the challenges right away is
+that the tests are not exactly testing only one unit of code: they
+work only if both the constructor *and* the getters are correct.  (If you didn't notice
+that, or it didn't both you, no worries.)
+
+The unit tests that we write here are not necessarily the best examples 
+of good testing practice.  These are here more to illustrate the mechanics of
+getting testing working.
+
+
+
+
+
+## 2. Get the JUnit code to compile
+
+When we try to compile this, we'll get some errors:
+
+```
+ex03 pconrad$ ant compile
+Buildfile: /Users/pconrad/github/UCSB-CS56-M16/cs56-rational-example/ex03/build.xml
+
+compile:
+    [javac] Compiling 3 source files to /Users/pconrad/github/UCSB-CS56-M16/cs56-rational-example/ex03
+    [javac] /Users/pconrad/github/UCSB-CS56-M16/cs56-rational-example/ex03/RationalTest.java:1: error: package org.junit does not exist
+... [Lots more errors here... ]
+```
+
+The reason is that we can't import JUnit unless JUnit is in the classpath.  JUnit is an add-on, not
+part of the standard Java library.
+
+To get it into this classpath, we introduce this bit of code into our build.xml.  It says
+to look first in the current directory, then in the junit `.jar` file. (The Java system libraries
+are always included without us having to do anything.)
+
+```xml
+  <path id="project.class.path"> 
+    <pathelement location="."/>                                                       
+    <pathelement location="lib/junit-4.8.2.jar"/>    
+  </path>
+```
+
+We then tell the `javac` task to use our classpath, by modifying it like this.  Note that the
+`classpath` element is a nested element.
+
+```xml
+ <javac srcdir="."
+           destdir="."
+           includeantruntime="false">
+      <classpath refid="project.class.path" />
+ </javac>
+
+```
+
+Now we can compile:
+
+```
+ex03 pconrad$ ant compile
+Buildfile: /Users/pconrad/github/UCSB-CS56-M16/cs56-rational-example/ex03/build.xml
+
+compile:
+    [javac] Compiling 3 source files to /Users/pconrad/github/UCSB-CS56-M16/cs56-rational-example/ex03
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+ex03 pconrad$ 
+```
+
+But how do we run the tests?  There's a special ant task for that.
+
+## Add a test target to run the tests
+
+
+
+
+TODO:
+
 Carry over to ex04:
 
 TODO: refactoring the directories into src and build (no packages yet)
