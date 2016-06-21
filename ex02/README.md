@@ -151,7 +151,7 @@ During this course, we'll see two different build systems.
     * If you understand make/Makefiles, Ant is straightforward
     
 * The second is Maven.
-    * The initial release of Ant was in 2004.
+    * The initial release of Maven was in 2004.
     * Maven combines a build tool with some of the functions
         of a package manager to manage .jar dependencies for you.
     * That's typically useful when you are using lots of 3rd party libraries.
@@ -160,7 +160,7 @@ During this course, we'll see two different build systems.
 
 In ex02, we'll start by adding a simple build.xml for Ant.
 
-It will start out very simple.  It subsequent examples, we'll add in features
+It will start out very simple.  In subsequent examples, we'll add in features
 that push us closer to actual real world Java practice (which will necessitate
 making the build.xml incrementally more complex at each stage.)
 
