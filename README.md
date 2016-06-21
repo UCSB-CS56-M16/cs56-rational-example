@@ -55,15 +55,15 @@ This is a work in progress; not all may be covered yet.  Will update this list w
 1. public constructors (ex01)
 1. toString method (ex02)
 1. public getters (ex02)
-1. immutable objects (throughout, but discussed in ex04)
 1. JUnit testing (ex03)
-1. static methods (class level)
-1. equals vs. == 
-1. proper way to override equals and hashcode
-1. exceptions (IllegalArgumentException)
-1. comparable interface
-1. creating an arraylist of rationals
-1. sorting an arraylist of rationals
+1. immutable objects (throughout, but discussed in ex04)
+1. static methods (class level) (ex05)
+1. exceptions (IllegalArgumentException) (ex07)
+1. proper way to override equals and hashcode (ex09 and beyond)
+1. equals vs. == (ex09 and beyond)
+1. comparable interface (ex09 and beyond)
+1. creating an arraylist of rationals (ex09 and beyond)
+1. sorting an arraylist of rationals (ex09 and beyond)
 
 Java Language Toolset Skills
 
@@ -72,7 +72,8 @@ Java Language Toolset Skills
 1. Running from a jar file (ex03)
 1. JUnit jars (ex03)
 1. Javadoc (ex04)
-1. cyber-dojo.org  (for divisible, gcd)
-1. Packages
-1. Maven
+1. Adding line numbers to stack traces (ex05)
+1. Adding links to Java Standard Libraries in our javdoc (ex06)
+1. Packages (ex09 and beyond)
+1. Maven (ex09 and beyond)
 

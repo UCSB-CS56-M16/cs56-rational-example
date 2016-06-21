@@ -120,5 +120,45 @@ public class RationalTest {
 	assertEquals("-7/8",r.toString());
     }
 
+    @Test
+    public void test_r_5_15_times_r_3_7() {
+	Rational r = r_5_15.times(r_3_7);
+	assertEquals("1/7",r.toString());
+    }
+
+    @Test
+    public void test_r_3_7_times_r_13_4() {
+	Rational r = r_3_7.times(r_13_4);
+	assertEquals("39/28",r.toString());
+    }
+
+    @Test
+    public void test_r_m3_1_times_1_m3() {
+	Rational r_m3_1 = new Rational(-3,1);
+	Rational r_1_m3 = new Rational(1,-3);
+	Rational r = r_m3_1.times(r_1_m3);
+	assertEquals("1",r.toString());
+    }
+
+   @Test
+    public void test_product_of_r_5_15_and_r_3_7() {
+       Rational r = Rational.product(r_5_15,r_3_7);
+       assertEquals("1/7",r.toString());
+    }
+
+    @Test
+    public void test_product_of_r_3_7_and_r_13_4() {
+	Rational r = Rational.product(r_3_7,r_13_4);
+	assertEquals("39/28",r.toString());
+    }
+
+    @Test
+    public void test_product_of_r_m3_1_and_1_m3() {
+	Rational r_m3_1 = new Rational(-3,1);
+	Rational r_1_m3 = new Rational(1,-3);
+	Rational r = Rational.product(r_m3_1,r_1_m3);
+	assertEquals("1",r.toString());
+    }
+ 
     
 }

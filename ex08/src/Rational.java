@@ -44,6 +44,17 @@ public class Rational {
 
     public int getNumerator() { return this.num; }
     public int getDenominator() { return this.denom; }
+
+    public Rational times(Rational r) {
+	return new Rational(this.num * r.num,
+			    this.denom * r.denom);
+    }
+
+    public static Rational product(Rational a, Rational b) {
+	return new Rational(a.num * b.num,
+			    a.denom * b.denom);
+    }
+
     
     /** 
 	For testing getters.  
@@ -55,5 +66,6 @@ public class Rational {
 	System.out.println("r.getNumerator()=" + r.getNumerator());
 	System.out.println("r.getDenominator()=" + r.getDenominator());
     }
+
     
 }

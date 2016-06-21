@@ -127,6 +127,11 @@ test:
 By the way, that `(Unknown Source)` thing is annoying.  We can take care of that with this adjustment to our build.xml: on the javac line, include the `debug="true"` attribute:
 
 ```xml
+    <javac srcdir="src"
+	   destdir="build"
+	   includeantruntime="false"
+	   debug="true" >
+
 ```
 
 Then after running `ant clean` and `ant test` again, we get the proper line numbers in our error messages:
